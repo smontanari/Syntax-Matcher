@@ -60,7 +60,7 @@ class DetectFileTypeCommand(sublime_plugin.EventListener):
 
 
     def is_rspec(self):
-        if self.name.find('_spec') > -1:
+        if self.name.find('_spec.rb') > -1:
             self.set_syntax('RSpec')
             return True
 
@@ -71,7 +71,7 @@ class DetectFileTypeCommand(sublime_plugin.EventListener):
         if re.search('steps$', self.name):
             self.set_syntax('Cucumber Steps', 'Cucumber')
             return True
-        elif re.search('.feature', self.name):
+        elif re.search('.feature$', self.name):
             self.set_syntax('Cucumber Plain Text Feature', 'Cucumber')
             return True
 
